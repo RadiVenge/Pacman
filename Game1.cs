@@ -73,16 +73,16 @@ namespace Pacman
 
             Map.Draw(_spriteBatch);
 
+            foreach (Position fruit in Food)
+            {
+                _spriteBatch.Draw(TextureHandler.Food, fruit.Raw, Color.White);
+            }
+
             Player.Draw(_spriteBatch);
 
             foreach (Enemy enemy in Enemies)
             {
                 enemy.Draw(_spriteBatch);
-            }
-
-            foreach (Position fruit in Food)
-            {
-                _spriteBatch.Draw(TextureHandler.Food, fruit.Raw, Color.White);
             }
 
             _spriteBatch.End();
